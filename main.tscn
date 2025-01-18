@@ -1,0 +1,180 @@
+[gd_scene load_steps=17 format=3 uid="uid://c246l52sax3pu"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_baa11"]
+[ext_resource type="Texture2D" uid="uid://il1c3ibj36ci" path="res://Sunset/Background.png" id="1_t8iq4"]
+[ext_resource type="Texture2D" uid="uid://cgck7nsb3gs5v" path="res://Sunset/1new.png" id="2_qeafj"]
+[ext_resource type="Texture2D" uid="uid://bm2x5sthvsvvl" path="res://Sunset/2new .png" id="3_pasip"]
+[ext_resource type="Texture2D" uid="uid://c7nx5ptxdw1jk" path="res://Sunset/4.png" id="4_5upe1"]
+[ext_resource type="Texture2D" uid="uid://dtg30erx6tb2m" path="res://Sunset/5.png" id="5_yu64o"]
+[ext_resource type="Texture2D" uid="uid://doam13a2xx02q" path="res://Sunset/6.png" id="6_8ncpv"]
+[ext_resource type="Texture2D" uid="uid://wqvr43div6pq" path="res://Sunset/7.png" id="7_k4jdf"]
+[ext_resource type="Texture2D" uid="uid://badlsam4l8l6m" path="res://Sunset/8.png" id="8_8ggss"]
+[ext_resource type="Script" path="res://scripts/sky.gd" id="9_acurr"]
+[ext_resource type="Texture2D" uid="uid://bia652215bb6l" path="res://Sunset/3clouds.png" id="10_w0b4u"]
+[ext_resource type="PackedScene" uid="uid://gqe1lwwyogya" path="res://terrain.tscn" id="11_hoykv"]
+[ext_resource type="PackedScene" uid="uid://bdno7al6gqix2" path="res://tanker.tscn" id="12_lxkwo"]
+
+[sub_resource type="GDScript" id="GDScript_uby6g"]
+script/source = "extends ParallaxBackground
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="InputEventKey" id="InputEventKey_sucnc"]
+keycode = 76
+
+[sub_resource type="Shortcut" id="Shortcut_nqc0c"]
+events = [SubResource("InputEventKey_sucnc")]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_baa11")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = SubResource("GDScript_uby6g")
+
+[node name="back" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2304, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_t8iq4")
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_t8iq4")
+
+[node name="1" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("2_qeafj")
+
+[node name="2" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_pasip")
+
+[node name="3" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("4_5upe1")
+
+[node name="4" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("5_yu64o")
+
+[node name="5" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("6_8ncpv")
+
+[node name="6" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("7_k4jdf")
+
+[node name="7" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("8_8ggss")
+
+[node name="8" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("8_8ggss")
+
+[node name="1c" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 323)
+scale = Vector2(3.6, 3.58889)
+texture = ExtResource("2_qeafj")
+flip_h = true
+
+[node name="1c2" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 323)
+scale = Vector2(3.6, 3.58889)
+texture = ExtResource("3_pasip")
+flip_h = true
+
+[node name="1c3" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("4_5upe1")
+flip_h = true
+
+[node name="1c4" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("5_yu64o")
+flip_h = true
+
+[node name="1c5" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("6_8ncpv")
+flip_h = true
+
+[node name="1c6" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("7_k4jdf")
+flip_h = true
+
+[node name="1c7" type="Sprite2D" parent="ParallaxBackground/back"]
+position = Vector2(1728, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("8_8ggss")
+flip_h = true
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2304, 0)
+script = ExtResource("9_acurr")
+
+[node name="3" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("10_w0b4u")
+
+[node name="4" type="Sprite2D" parent="ParallaxBackground/sky"]
+position = Vector2(1728, 326)
+scale = Vector2(3.6, 3.62222)
+texture = ExtResource("10_w0b4u")
+flip_h = true
+
+[node name="terrain" parent="." instance=ExtResource("11_hoykv")]
+
+[node name="tanker" parent="." instance=ExtResource("12_lxkwo")]
+position = Vector2(120, 128)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="lock_aim" type="Button" parent="CanvasLayer"]
+offset_left = 592.0
+offset_top = 504.0
+offset_right = 704.0
+offset_bottom = 552.0
+toggle_mode = true
+action_mode = 0
+shortcut = SubResource("Shortcut_nqc0c")
+text = "Lock Target
+"
+
+[node name="shoot" type="Button" parent="CanvasLayer"]
+offset_left = 256.0
+offset_top = 496.0
+offset_right = 376.0
+offset_bottom = 536.0
+text = "Shoot"
+
+[connection signal="toggled" from="CanvasLayer/lock_aim" to="." method="_on_lock_aim_toggled"]
+[connection signal="pressed" from="CanvasLayer/shoot" to="." method="_on_shoot_pressed"]

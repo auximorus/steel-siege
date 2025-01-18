@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gqe1lwwyogya"]
+
+[ext_resource type="Texture2D" uid="uid://d2tj1ot2raqya" path="res://green-fake-grass-background.jpg" id="1_vy4tj"]
+[ext_resource type="Script" path="res://scripts/polygon_2d.gd" id="2_a2eef"]
+
+[node name="terrain" type="Node2D"]
+physics_interpolation_mode = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0546332, 0.285362, 0.541121, 1)
+texture = ExtResource("1_vy4tj")
+script = ExtResource("2_a2eef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/StaticBody2D"]

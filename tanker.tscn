@@ -1,0 +1,190 @@
+[gd_scene load_steps=17 format=3 uid="uid://bdno7al6gqix2"]
+
+[ext_resource type="Script" path="res://scripts/tanker.gd" id="1_lwmum"]
+[ext_resource type="Texture2D" uid="uid://4xjupraost8g" path="res://tanks sprites/movement sprites/frame0001.png" id="1_y1b01"]
+[ext_resource type="Texture2D" uid="uid://byrbdeb4nqhgw" path="res://tanks sprites/movement sprites/frame0002.png" id="2_t7hn3"]
+[ext_resource type="Texture2D" uid="uid://y7klw048rdk1" path="res://tanks sprites/movement sprites/frame0004.png" id="3_x3e8e"]
+[ext_resource type="Texture2D" uid="uid://hcxq18jvm2p5" path="res://tanks sprites/movement sprites/frame0003.png" id="4_i8kao"]
+[ext_resource type="Texture2D" uid="uid://biohgf2t45icn" path="res://tanks sprites/movement sprites/frame0005.png" id="5_gt8y3"]
+[ext_resource type="Texture2D" uid="uid://dg7ujmo4xqmyi" path="res://tanks sprites/movement sprites/frame0006.png" id="6_hhv1g"]
+[ext_resource type="PackedScene" uid="uid://ctth6hj2a4slb" path="res://barell.tscn" id="8_x6wge"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cj6q1"]
+rough = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yr4bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y1b01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t7hn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x3e8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i8kao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gt8y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hhv1g")
+}],
+"loop": true,
+"name": &"motion",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_454c0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_a4xdc"]
+resource_name = "motion"
+length = 0.18
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvqaj"]
+_data = {
+"RESET": SubResource("Animation_454c0"),
+"motion": SubResource("Animation_a4xdc")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_36kui"]
+rough = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nd0ur"]
+radius = 11.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lqg13"]
+rough = true
+
+[node name="tanker" type="Node2D"]
+
+[node name="barell" parent="." instance=ExtResource("8_x6wge")]
+position = Vector2(0, -40)
+
+[node name="tankbody" type="RigidBody2D" parent="."]
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_cj6q1")
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, -16)
+script = ExtResource("1_lwmum")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tankbody"]
+polygon = PackedVector2Array(-30, -25, -23, -36, 27, -36, 34, -24, 38, -24, 42, -21, 45, -17, 45, -9, 43, -5, 39, -2, -34, -2, -38, -4, -41, -8, -42, -16, -39, -21, -35, -24)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tankbody"]
+position = Vector2(-0.625373, -25.5612)
+scale = Vector2(0.316887, 0.260911)
+sprite_frames = SubResource("SpriteFrames_yr4bm")
+animation = &"motion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="tankbody"]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_mvqaj")
+}
+
+[node name="fronttyre" type="RigidBody2D" parent="tankbody"]
+mass = 50.0
+physics_material_override = SubResource("PhysicsMaterial_36kui")
+center_of_mass_mode = 1
+center_of_mass = Vector2(36, -11)
+inertia = 2704.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tankbody/fronttyre"]
+position = Vector2(36, -11)
+shape = SubResource("CircleShape2D_nd0ur")
+
+[node name="backtyre" type="RigidBody2D" parent="tankbody"]
+mass = 50.0
+physics_material_override = SubResource("PhysicsMaterial_lqg13")
+center_of_mass_mode = 1
+center_of_mass = Vector2(-33, -11)
+inertia = 2704.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tankbody/backtyre"]
+position = Vector2(-33, -11)
+shape = SubResource("CircleShape2D_nd0ur")
+
+[node name="centretyre" type="RigidBody2D" parent="tankbody"]
+mass = 50.0
+physics_material_override = SubResource("PhysicsMaterial_lqg13")
+center_of_mass_mode = 1
+center_of_mass = Vector2(-10, -11)
+inertia = 2704.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tankbody/centretyre"]
+position = Vector2(-10, -11)
+shape = SubResource("CircleShape2D_nd0ur")
+
+[node name="centretyre2" type="RigidBody2D" parent="tankbody"]
+mass = 50.0
+physics_material_override = SubResource("PhysicsMaterial_lqg13")
+center_of_mass_mode = 1
+center_of_mass = Vector2(13, -11)
+inertia = 2704.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tankbody/centretyre2"]
+position = Vector2(13, -11)
+shape = SubResource("CircleShape2D_nd0ur")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="tankbody"]
+position = Vector2(36, -11)
+node_a = NodePath("..")
+node_b = NodePath("../fronttyre")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="tankbody"]
+position = Vector2(-33, -11)
+node_a = NodePath("..")
+node_b = NodePath("../backtyre")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="tankbody"]
+position = Vector2(-10, -11)
+node_a = NodePath("..")
+node_b = NodePath("../centretyre")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="tankbody"]
+position = Vector2(13, -11)
+node_a = NodePath("..")
+node_b = NodePath("../centretyre2")
+
+[node name="RayCast2D" type="RayCast2D" parent="tankbody"]
+position = Vector2(-43, 1)
+target_position = Vector2(90, 0)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, -40)
+node_a = NodePath("../tankbody")
+node_b = NodePath("../barell")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(26, 0)
+limit_bottom = 640

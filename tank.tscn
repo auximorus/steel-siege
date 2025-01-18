@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://datqyxp5ncgj3"]
+
+[ext_resource type="Script" path="res://scripts/tank.gd" id="1_twm0s"]
+[ext_resource type="Texture2D" uid="uid://4xjupraost8g" path="res://tanks sprites/movement sprites/frame0001.png" id="2_6p2c6"]
+[ext_resource type="Texture2D" uid="uid://byrbdeb4nqhgw" path="res://tanks sprites/movement sprites/frame0002.png" id="3_346g8"]
+[ext_resource type="Texture2D" uid="uid://y7klw048rdk1" path="res://tanks sprites/movement sprites/frame0004.png" id="4_u60nr"]
+[ext_resource type="Texture2D" uid="uid://hcxq18jvm2p5" path="res://tanks sprites/movement sprites/frame0003.png" id="5_fxmon"]
+[ext_resource type="Texture2D" uid="uid://biohgf2t45icn" path="res://tanks sprites/movement sprites/frame0005.png" id="6_el27h"]
+[ext_resource type="Texture2D" uid="uid://dg7ujmo4xqmyi" path="res://tanks sprites/movement sprites/frame0006.png" id="7_ejgdm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhmfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6p2c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_346g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u60nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fxmon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_el27h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ejgdm")
+}],
+"loop": true,
+"name": &"motion",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_q46w7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_us6f2"]
+resource_name = "motion"
+length = 0.18
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtgqg"]
+_data = {
+"RESET": SubResource("Animation_q46w7"),
+"motion": SubResource("Animation_us6f2")
+}
+
+[node name="tank" type="CharacterBody2D"]
+floor_stop_on_slope = false
+script = ExtResource("1_twm0s")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(40.325, -8)
+scale = Vector2(0.20759, 0.224927)
+polygon = PackedVector2Array(-121.995, 31.1212, 162.219, 31.1212, 195.939, -4.44589, 195.939, -26.6753, 167.036, -66.6883, 147.767, -66.6883, 114.047, -115.593, -78.6406, -115.593, -112.361, -66.6883, -146.081, -53.3506, -160.533, -22.2294, -146.081, 17.7835)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(42, -24)
+scale = Vector2(0.267559, 0.244898)
+sprite_frames = SubResource("SpriteFrames_bhmfl")
+animation = &"motion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_rtgqg")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_top = 0
+limit_bottom = 648
+
+[node name="RayCast2D_Right" type="RayCast2D" parent="."]
+position = Vector2(82, -12)
+target_position = Vector2(0, 18)
+
+[node name="RayCast2D_Left" type="RayCast2D" parent="."]
+position = Vector2(6, -11)
+target_position = Vector2(0, 18)

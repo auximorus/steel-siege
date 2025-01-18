@@ -1,0 +1,15 @@
+res://tanker.tscn
+res://scripts/sky.gd
+res://scripts/tank.gd
+res://scripts/main.gd
+res://terrain.tscn
+res://main.tscn
+res://tank.tscn
+res://tankfinal.tscn
+res://barell.tscn
+res://scripts/tanker.gd
+res://global/utils.gd
+res://projectile.tscn
+res://scripts/projectile.gd
+res://global/game.gd
+res://scripts/polygon_2d.gd
