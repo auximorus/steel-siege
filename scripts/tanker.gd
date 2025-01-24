@@ -1,9 +1,9 @@
 extends RigidBody2D
-var speed = 400
+var speed = 200
 var count = 0
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+#func _ready() -> void:
+	#pass
 
 func get_input():
 	var input_direction = 0
@@ -14,31 +14,50 @@ func get_input():
 	if Input.is_action_pressed("left"):
 		input_direction = -1
 		$".".freeze = false
+		$fronttyre.freeze = false
+		$backtyre.freeze = false
+		$centretyre.freeze = false
+		$centretyre2.freeze = false
 		$AnimationPlayer.play("motion")
 		$AnimatedSprite2D.flip_h = false
-		print("left",count)
 		count+=1
 		
 	elif Input.is_action_pressed("right"):
 		$".".freeze = false
+		$fronttyre.freeze = false
+		$backtyre.freeze = false
+		$centretyre.freeze = false
+		$centretyre2.freeze = false
 		input_direction = 1
 		$AnimationPlayer.play("motion")
 		$AnimatedSprite2D.flip_h = true
-		print("right",count)
 		count+=1
 		
 
 	else:
 		$AnimationPlayer.pause()
 		if $RayCast2D.is_colliding()==true:
+			
 			if $".".freeze == false:
-				await get_tree().create_timer(0.05).timeout
+				#await get_tree().create_timer(0.05).timeout
 				$".".freeze = true
+				$fronttyre.freeze = true
+				$backtyre.freeze = true
+				$centretyre.freeze = true
+				$centretyre2.freeze = true
 			else:
 				$".".freeze = true
+				$fronttyre.freeze = true
+				$backtyre.freeze = true
+				$centretyre.freeze = true
+				$centretyre2.freeze = true
 				
 		else:
 			$".".freeze = false
+			$fronttyre.freeze = false
+			$backtyre.freeze = false
+			$centretyre.freeze = false
+			$centretyre2.freeze = false
 	#if input.action
 	$fronttyre.angular_velocity = input_direction* 500
 	$backtyre.angular_velocity = input_direction* 500
@@ -49,6 +68,11 @@ func get_input():
 	#linear_velocity.x = input_direction * speed
 
 func _physics_process(delta):
+	$RayCast2D.add_exception($fronttyre)
+	$RayCast2D.add_exception($backtyre)
+	$RayCast2D.add_exception($centretyre)
+	$RayCast2D.add_exception($centretyre2)
+
 	get_input()
 	$"../Camera2D".position = $".".position
 	#move_and_slide()

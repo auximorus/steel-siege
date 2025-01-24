@@ -97,6 +97,14 @@ center_of_mass_mode = 1
 center_of_mass = Vector2(0, -16)
 script = ExtResource("1_lwmum")
 
+[node name="RayCast2D" type="RayCast2D" parent="tankbody"]
+position = Vector2(-41, 1)
+exclude_parent = false
+target_position = Vector2(84, 0)
+collision_mask = 3
+hit_from_inside = true
+collide_with_areas = true
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tankbody"]
 polygon = PackedVector2Array(-30, -25, -23, -36, 27, -36, 34, -24, 38, -24, 42, -21, 45, -17, 45, -9, 43, -5, 39, -2, -34, -2, -38, -4, -41, -8, -42, -16, -39, -21, -35, -24)
 
@@ -175,10 +183,6 @@ node_b = NodePath("../centretyre")
 position = Vector2(13, -11)
 node_a = NodePath("..")
 node_b = NodePath("../centretyre2")
-
-[node name="RayCast2D" type="RayCast2D" parent="tankbody"]
-position = Vector2(-43, 1)
-target_position = Vector2(90, 0)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, -40)

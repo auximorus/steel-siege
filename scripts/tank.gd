@@ -2,8 +2,8 @@ extends CharacterBody2D
 var speed = 200
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+#func _ready() -> void:
+	#pass
 
 func get_input():
 	var input_direction = 0

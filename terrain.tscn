@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://gqe1lwwyogya"]
+[gd_scene load_steps=4 format=3 uid="uid://gqe1lwwyogya"]
 
 [ext_resource type="Texture2D" uid="uid://d2tj1ot2raqya" path="res://green-fake-grass-background.jpg" id="1_vy4tj"]
-[ext_resource type="Script" path="res://scripts/polygon_2d.gd" id="2_a2eef"]
+[ext_resource type="Script" path="res://scripts/terrainpolygon.gd" id="2_a2eef"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3voar"]
+rough = true
 
 [node name="terrain" type="Node2D"]
 physics_interpolation_mode = 2
@@ -12,5 +15,10 @@ texture = ExtResource("1_vy4tj")
 script = ExtResource("2_a2eef")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D"]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_3voar")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Polygon2D/StaticBody2D"]
+light_mask = 3
+visibility_layer = 3
