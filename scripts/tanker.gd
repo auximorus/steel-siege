@@ -39,7 +39,7 @@ func get_input():
 		if $RayCast2D.is_colliding()==true:
 			
 			if $".".freeze == false:
-				#await get_tree().create_timer(0.05).timeout
+				await get_tree().create_timer(0.1).timeout
 				$".".freeze = true
 				$fronttyre.freeze = true
 				$backtyre.freeze = true

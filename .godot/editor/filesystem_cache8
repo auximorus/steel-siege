@@ -1,16 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737651255
+::res://::1737741044
 barell.png::CompressedTexture2D::4842177396124427254::1737180446::1737180912::1::::<><>::
-barell.tscn::PackedScene::6146133335190978375::1737620946::0::1::::<><>::uid://ca8t7pemjaju1::::res://barell.png
+barell.tscn::PackedScene::6146133335190978375::1737740848::0::1::::<><>::uid://ca8t7pemjaju1::::res://barell.png
 green-fake-grass-background.jpg::CompressedTexture2D::9094177656137418144::1737180446::1737180913::1::::<><>::
 icon.svg::CompressedTexture2D::757795162940102221::1737180446::1737180912::1::::<><>::
-main.tscn::PackedScene::6729710589218522298::1737620946::0::1::::<><>::res://scripts/main.gd<>uid://il1c3ibj36ci::::res://Sunset/Background.png<>uid://cgck7nsb3gs5v::::res://Sunset/1new.png<>uid://bm2x5sthvsvvl::::res://Sunset/2new .png<>uid://c7nx5ptxdw1jk::::res://Sunset/4.png<>uid://dtg30erx6tb2m::::res://Sunset/5.png<>uid://doam13a2xx02q::::res://Sunset/6.png<>uid://wqvr43div6pq::::res://Sunset/7.png<>uid://badlsam4l8l6m::::res://Sunset/8.png<>res://scripts/sky.gd<>uid://bia652215bb6l::::res://Sunset/3clouds.png<>uid://gqe1lwwyogya::::res://terrain.tscn<>uid://bdno7al6gqix2::::res://tanker.tscn
-projectile.tscn::PackedScene::3660315028070511663::1737632544::0::1::::<><>::res://scripts/projectile.gd
+main.tscn::PackedScene::6729710589218522298::1737740848::0::1::::<><>::res://scripts/main.gd<>uid://il1c3ibj36ci::::res://Sunset/Background.png<>uid://cgck7nsb3gs5v::::res://Sunset/1new.png<>uid://bm2x5sthvsvvl::::res://Sunset/2new .png<>uid://c7nx5ptxdw1jk::::res://Sunset/4.png<>uid://dtg30erx6tb2m::::res://Sunset/5.png<>uid://doam13a2xx02q::::res://Sunset/6.png<>uid://wqvr43div6pq::::res://Sunset/7.png<>uid://badlsam4l8l6m::::res://Sunset/8.png<>res://scripts/sky.gd<>uid://bia652215bb6l::::res://Sunset/3clouds.png<>uid://gqe1lwwyogya::::res://terrain.tscn<>uid://bdno7al6gqix2::::res://tanker.tscn<>uid://cfanqgs6nyj3v::::res://tilesets/decor_16x16.png<>uid://y53524vmrmxf::::res://tilesets/walls/walls.png<>uid://dj8uc6cmvkr1k::::res://tilesets/plains.png
+projectile.tscn::PackedScene::3660315028070511663::1737740848::0::1::::<><>::res://scripts/projectile.gd
 README.md::TextFile::-1::1737180446::0::1::::<><>::
 tank.tscn::PackedScene::7199500791934060358::1737180446::0::1::::<><>::res://scripts/tank.gd<>uid://4xjupraost8g::::res://tanks sprites/movement sprites/frame0001.png<>uid://byrbdeb4nqhgw::::res://tanks sprites/movement sprites/frame0002.png<>uid://y7klw048rdk1::::res://tanks sprites/movement sprites/frame0004.png<>uid://hcxq18jvm2p5::::res://tanks sprites/movement sprites/frame0003.png<>uid://biohgf2t45icn::::res://tanks sprites/movement sprites/frame0005.png<>uid://dg7ujmo4xqmyi::::res://tanks sprites/movement sprites/frame0006.png
-tanker.tscn::PackedScene::2624731327123666121::1737620946::0::1::::<><>::res://scripts/tanker.gd<>uid://4xjupraost8g::::res://tanks sprites/movement sprites/frame0001.png<>uid://byrbdeb4nqhgw::::res://tanks sprites/movement sprites/frame0002.png<>uid://y7klw048rdk1::::res://tanks sprites/movement sprites/frame0004.png<>uid://hcxq18jvm2p5::::res://tanks sprites/movement sprites/frame0003.png<>uid://biohgf2t45icn::::res://tanks sprites/movement sprites/frame0005.png<>uid://dg7ujmo4xqmyi::::res://tanks sprites/movement sprites/frame0006.png<>uid://ctth6hj2a4slb::::res://barell.tscn
+tanker.tscn::PackedScene::2624731327123666121::1737740848::0::1::::<><>::res://scripts/tanker.gd<>uid://4xjupraost8g::::res://tanks sprites/movement sprites/frame0001.png<>uid://byrbdeb4nqhgw::::res://tanks sprites/movement sprites/frame0002.png<>uid://y7klw048rdk1::::res://tanks sprites/movement sprites/frame0004.png<>uid://hcxq18jvm2p5::::res://tanks sprites/movement sprites/frame0003.png<>uid://biohgf2t45icn::::res://tanks sprites/movement sprites/frame0005.png<>uid://dg7ujmo4xqmyi::::res://tanks sprites/movement sprites/frame0006.png<>uid://ctth6hj2a4slb::::res://barell.tscn
 tankfinal.tscn::PackedScene::6178306193286926327::1737180446::0::1::::<><>::uid://4xjupraost8g::::res://tanks sprites/movement sprites/frame0001.png<>uid://byrbdeb4nqhgw::::res://tanks sprites/movement sprites/frame0002.png<>uid://y7klw048rdk1::::res://tanks sprites/movement sprites/frame0004.png<>uid://hcxq18jvm2p5::::res://tanks sprites/movement sprites/frame0003.png<>uid://biohgf2t45icn::::res://tanks sprites/movement sprites/frame0005.png<>uid://dg7ujmo4xqmyi::::res://tanks sprites/movement sprites/frame0006.png
-terrain.tscn::PackedScene::454453017280502008::1737620945::0::1::::<><>::uid://d2tj1ot2raqya::::res://green-fake-grass-background.jpg<>res://scripts/terrainpolygon.gd
+terrain.tscn::PackedScene::454453017280502008::1737740848::0::1::::<><>::uid://d2tj1ot2raqya::::res://green-fake-grass-background.jpg<>res://scripts/terrainpolygon.gd
+::res://assets/::1737741045
+ghost-idle.png::CompressedTexture2D::1198074119721925845::1737741017::1737741057::1::::<><>::
+ghost-move.png::CompressedTexture2D::8266381902547543211::1737741021::1737741057::1::::<><>::
 ::res://Asteroid-A-10-59/::1737180912
 Asteroid-A-10-00.png::CompressedTexture2D::6021323025846476727::1737180446::1737180912::1::::<><>::
 Asteroid-A-10-01.png::CompressedTexture2D::687796414445791793::1737180446::1737180912::1::::<><>::
@@ -74,16 +77,16 @@ Asteroid-A-10-58.png::CompressedTexture2D::8689164039490121483::1737180446::1737
 Asteroid-A-10-59.png::CompressedTexture2D::6524534295234085940::1737180446::1737180912::1::::<><>::
 ::res://global/::1737611141
 game.gd::GDScript::-1::1737611141::0::1::::<>Node<>::
-::res://projectiles/::1737620946
-asteroid.tscn::PackedScene::4249671616913168781::1737620946::0::1::::<><>::res://scripts/asteroid.gd<>uid://cr11ks7i4xg2b::::res://Asteroid-A-10-59/Asteroid-A-10-00.png
-::res://scripts/::1737631517
+::res://projectiles/::1737740849
+asteroid.tscn::PackedScene::4249671616913168781::1737740849::0::1::::<><>::res://scripts/asteroid.gd<>uid://cr11ks7i4xg2b::::res://Asteroid-A-10-59/Asteroid-A-10-00.png
+::res://scripts/::1737739225
 asteroid.gd::GDScript::-1::1737460287::0::1::::<>RigidBody2D<>::
-main.gd::GDScript::-1::1737460277::0::1::::<>Node2D<>::
-projectile.gd::GDScript::-1::1737620390::0::1::::<>RigidBody2D<>::
-sky.gd::GDScript::-1::1737619400::0::1::::<>ParallaxLayer<>::
-tank.gd::GDScript::-1::1737619400::0::1::::<>CharacterBody2D<>::
-tanker.gd::GDScript::-1::1737541487::0::1::::<>RigidBody2D<>::
-terrainpolygon.gd::GDScript::-1::1737631517::0::1::::<>Polygon2D<>::
+main.gd::GDScript::-1::1737739225::0::1::::<>Node2D<>::
+projectile.gd::GDScript::-1::1737739158::0::1::::<>RigidBody2D<>::
+sky.gd::GDScript::-1::1737738031::0::1::::<>ParallaxLayer<>::
+tank.gd::GDScript::-1::1737738031::0::1::::<>CharacterBody2D<>::
+tanker.gd::GDScript::-1::1737695520::0::1::::<>RigidBody2D<>::
+terrainpolygon.gd::GDScript::-1::1737695175::0::1::::<>Polygon2D<>::
 ::res://Sunset/::1737180912
 1.png::CompressedTexture2D::274736169498358126::1737180446::1737180912::1::::<><>::
 1new.png::CompressedTexture2D::5198768210748279145::1737180446::1737180912::1::::<><>::
@@ -110,3 +113,26 @@ frame0003.png::CompressedTexture2D::496877141533587992::1737180446::1737180912::
 frame0004.png::CompressedTexture2D::1751220344599520498::1737180446::1737180912::1::::<><>::
 frame0005.png::CompressedTexture2D::2977268760296676817::1737180446::1737180912::1::::<><>::
 frame0006.png::CompressedTexture2D::7647686266294353784::1737180446::1737180912::1::::<><>::
+::res://tilesets/::1737696127
+decor_8x8.png::CompressedTexture2D::2462339642342444911::1715086386::1737696127::1::::<><>::
+decor_16x16.png::CompressedTexture2D::5124603823558211937::1715086386::1737696127::1::::<><>::
+fences.png::CompressedTexture2D::3361739918415611816::1715086386::1737696127::1::::<><>::
+grass.png::CompressedTexture2D::2521010009001281715::1715086386::1737696127::1::::<><>::
+plains.png::CompressedTexture2D::7860305653035871330::1715086386::1737696127::1::::<><>::
+water1.png::CompressedTexture2D::8200112240813230948::1715086386::1737696127::1::::<><>::
+water2.png::CompressedTexture2D::770361087848228817::1715086386::1737696127::1::::<><>::
+water3.png::CompressedTexture2D::445076022073342695::1715086386::1737696127::1::::<><>::
+water4.png::CompressedTexture2D::2314440042572357704::1715086386::1737696127::1::::<><>::
+water5.png::CompressedTexture2D::6672597671803611576::1715086386::1737696127::1::::<><>::
+water6.png::CompressedTexture2D::2673096315301597633::1715086386::1737696127::1::::<><>::
+water-sheet.png::CompressedTexture2D::2901170344912952420::1715086386::1737696127::1::::<><>::
+water_decorations.png::CompressedTexture2D::4147412637286364233::1715086386::1737696127::1::::<><>::
+water_lillies.png::CompressedTexture2D::9052072764795719469::1715086386::1737696127::1::::<><>::
+::res://tilesets/floors/::1737696128
+carpet.png::CompressedTexture2D::9065802037582760063::1715086386::1737696128::1::::<><>::
+flooring.png::CompressedTexture2D::5437947074420874016::1715086386::1737696128::1::::<><>::
+wooden.png::CompressedTexture2D::125201070091170282::1715086386::1737696127::1::::<><>::
+::res://tilesets/walls/::1737696128
+walls.png::CompressedTexture2D::1748218693449823083::1715086386::1737696128::1::::<><>::
+wooden_door.png::CompressedTexture2D::3975862903970866089::1715086386::1737696127::1::::<><>::
+wooden_door_b.png::CompressedTexture2D::2839689492429308597::1715086386::1737696127::1::::<><>::

@@ -1,9 +1,11 @@
-res://projectiles/asteroid.tscn
+res://main.tscn
 res://scripts/sky.gd
 res://scripts/tank.gd
-res://scripts/terrainpolygon.gd
 res://terrain.tscn
-res://main.tscn
 res://tanker.tscn
 res://barell.tscn
 res://projectile.tscn
+res://projectiles/asteroid.tscn
+res://scripts/projectile.gd
+res://scripts/main.gd
+res://ghost.tscn

@@ -24,6 +24,7 @@ func _on_lock_aim_toggled(toggled_on: bool) -> void:
 func _on_shoot_pressed() -> void:
 	#var bullet = proj.new()
 	var pos = $tanker.get_node("barell").get_node("Marker2D").global_position
+	print(pos)
 	var bullet = asteroid.instantiate()
 	bullet.initialize(pos,game.angleshoot,game.power)
 	add_child(bullet)

@@ -191,4 +191,7 @@ node_b = NodePath("../barell")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(26, 0)
+limit_left = -32
+limit_top = 0
+limit_right = 2032
 limit_bottom = 640
